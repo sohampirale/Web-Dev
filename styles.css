@@ -1,0 +1,113 @@
+/* styles.css */
+/* body {
+    font-family: 'Arial, sans-serif';
+    background: #fdf6e3; /* a soft background color 
+    color: #333;
+    margin: 0;
+    padding: 0;
+  } */
+
+  /* Slideshow container */
+.slide-container {
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    position: relative;
+  }
+  
+  /* Wrapper for images */
+  .slide-wrapper {
+    display: flex;
+    gap: 20px;
+    animation: scrollLeft 20s linear infinite; /* Slower speed */
+    width: calc(200px * 8 + 20px * 8); /* Adjust width based on images count */
+  }
+  
+  /* Ensuring images stay proportional */
+  .slide-wrapper img {
+    width: 200px;
+    height: auto; /* Maintains aspect ratio */
+    object-fit: cover; /* Ensures no stretching */
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Keyframes for smooth infinite scrolling */
+  @keyframes scrollLeft {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%); /* Moves only halfway to create seamless effect */
+    }
+  }
+  
+  /* Fixing squeezed images */
+  .slide-wrapper img {
+    flex-shrink: 0; /* Prevents squeezing */
+    object-fit: cover; /* Ensures no distortion */
+    aspect-ratio: 1 / 1; /* Forces a square ratio if needed */
+  }
+  
+  #intro {
+    animation: fadeInUp 3s ease-out;
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .memory {
+    text-align: center; /* Centers inline elements like images */
+  }
+  
+  
+  .memory img {
+    display: inline-block; /* Ensures it respects text-align */
+    margin: 20px auto; /* Adds spacing and centers the image */
+    width: 60%;  /* Adjust this percentage as needed */
+    max-width: 200px;  /* Ensures it doesn't get too large on bigger screens */
+    height: auto;  /* Maintains aspect ratio */
+    border-radius: 10px;  /* Optional: Makes edges slightly rounded for a soft look */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);  /* Adds a subtle shadow for a polished effect */
+  }
+  
+  body {
+    background: url('path-to-your-romantic-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Arial', sans-serif;  /* We'll update this in a moment */
+    background: linear-gradient(135deg, #fdf6e3, #ffecd2); /* soft, warm gradient */
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  section {
+    padding: 50px;
+    text-align: center;
+  }
+  
+  #proposal h2 {
+    margin-bottom: 20px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #ff4081;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #e73370;
+  }
+  
