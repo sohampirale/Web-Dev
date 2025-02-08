@@ -1,113 +1,176 @@
-/* styles.css */
-/* body {
-    font-family: 'Arial, sans-serif';
-    background: #fdf6e3; /* a soft background color 
-    color: #333;
-    margin: 0;
-    padding: 0;
-  } */
+/* General Styling */
+/* Styling for the collage image */
+#intro img {
+  width: 80%; /* Makes it responsive */
+  max-width: 600px; /* Ensures it doesn't get too big */
+  height: auto; /* Maintains aspect ratio */
+  display: block; /* Centers it properly */
+  margin: 20px auto; /* Adds spacing and centers */
+  border-radius: 15px; /* Soft rounded edges */
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Adds a soft shadow */
+}
 
-  /* Slideshow container */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #fdf6e3, #ffecd2); /* Soft, warm gradient */
+  color: #333;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* Sections */
+section {
+  padding: 50px;
+}
+
+/* Slideshow Styling */
+/* Slideshow Styling */
+/* Slideshow Styling */
 .slide-container {
-    overflow: hidden;
-    width: 100%;
-    white-space: nowrap;
-    position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.slide-wrapper {
+  display: flex;
+  animation: scrollLeft 30s linear infinite; /* Changed from 10s to 15s */
+  width: calc(220px * 8 + 20px * 8); /* Adjust width based on image count */
+}
+
+/* Default size for all images */
+.slide-wrapper img {
+  width: 300px; 
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Target both instances of the 4th image in the scrolling sequence */
+.slide-wrapper img:nth-child(4),
+.slide-wrapper img:nth-child(8) { /* Adjusting for duplicated images */
+  width: 400px; /* Wider */
+  height: 200px; /* Shorter */
+  object-fit: cover; /* Ensures proper cropping */
+  border-radius: 15px;
+}
+
+/* Keyframes for smooth infinite scrolling */
+@keyframes scrollLeft {
+  from {
+    transform: translateX(0);
   }
-  
-  /* Wrapper for images */
-  .slide-wrapper {
-    display: flex;
-    gap: 20px;
-    animation: scrollLeft 20s linear infinite; /* Slower speed */
-    width: calc(200px * 8 + 20px * 8); /* Adjust width based on images count */
+  to {
+    transform: translateX(-100%);
   }
-  
-  /* Ensuring images stay proportional */
-  .slide-wrapper img {
-    width: 200px;
-    height: auto; /* Maintains aspect ratio */
-    object-fit: cover; /* Ensures no stretching */
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Keyframes for smooth infinite scrolling */
-  @keyframes scrollLeft {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-50%); /* Moves only halfway to create seamless effect */
-    }
-  }
-  
-  /* Fixing squeezed images */
-  .slide-wrapper img {
-    flex-shrink: 0; /* Prevents squeezing */
-    object-fit: cover; /* Ensures no distortion */
-    aspect-ratio: 1 / 1; /* Forces a square ratio if needed */
-  }
-  
-  #intro {
-    animation: fadeInUp 3s ease-out;
-  }
-  
-  @keyframes fadeInUp {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  .memory {
-    text-align: center; /* Centers inline elements like images */
-  }
-  
-  
-  .memory img {
-    display: inline-block; /* Ensures it respects text-align */
-    margin: 20px auto; /* Adds spacing and centers the image */
-    width: 60%;  /* Adjust this percentage as needed */
-    max-width: 200px;  /* Ensures it doesn't get too large on bigger screens */
-    height: auto;  /* Maintains aspect ratio */
-    border-radius: 10px;  /* Optional: Makes edges slightly rounded for a soft look */
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);  /* Adds a subtle shadow for a polished effect */
-  }
-  
-  body {
-    background: url('path-to-your-romantic-image.jpg') no-repeat center center fixed;
-    background-size: cover;
-    font-family: 'Arial', sans-serif;  /* We'll update this in a moment */
-    background: linear-gradient(135deg, #fdf6e3, #ffecd2); /* soft, warm gradient */
-    color: #333;
-    margin: 0;
-    padding: 0;
-  }
-  
-  section {
-    padding: 50px;
-    text-align: center;
-  }
-  
-  #proposal h2 {
-    margin-bottom: 20px;
-  }
-  
-  button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    background-color: #ff4081;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-  }
-  
-  button:hover {
-    background-color: #e73370;
-  }
-  
+}
+
+
+
+/* Memory Styling */
+.memory img {
+  width: 300px; /* Increased size */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Proposal Section */
+#proposal h2 {
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #ff4081;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #e73370;
+}
+
+/* Proposal Message */
+#proposalMessage {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+
+
+#memories {
+  text-align: center;
+  padding: 30px;
+}
+
+.memoryBtn {
+  margin: 10px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.memoryBtn:hover {
+  background-color: #e65b50;
+}
+
+#memoryDisplay {
+  text-align: center;
+  margin-top: 20px;
+  opacity: 0; /* Start hidden */
+  transition: opacity 0.5s ease-in-out;
+}
+#memoryImage {
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  max-width: 80%;
+}
+
+#memoryText {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #333;
+}
+
+
+.memoryBtn {
+  margin: 10px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.memoryBtn:hover {
+  transform: scale(1.05);
+  background-color: #e65b50;
+}
+
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: none;
+}

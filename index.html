@@ -7,14 +7,25 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
   <section id="intro">
     <h1>Welcome, Vaishnavi</h1>
     <p>Let's take a journey through our story...</p>
+    <img src="images/collage.jpeg" alt="Memory 1">
+
   </section>
+
+  <!-- Slideshow Section -->
   <section id="slideshow">
     <h2>Our Memories in Motion</h2>
     <div class="slide-container">
       <div class="slide-wrapper">
+        <!-- Duplicated images for seamless scrolling -->
+        <img src="images/candidLaugh.jpeg" alt="Memory 1">
+        <img src="images/lovingStare.jpeg" alt="Memory 2">
+        <img src="images/VC_SS.jpeg" alt="Memory 3">
+        <img src="images/labRandomPic.jpeg" alt="Memory 4">
+        <!-- Duplicate images for infinite effect -->
         <img src="images/candidLaugh.jpeg" alt="Memory 1">
         <img src="images/lovingStare.jpeg" alt="Memory 2">
         <img src="images/VC_SS.jpeg" alt="Memory 3">
@@ -22,37 +33,40 @@
       </div>
     </div>
   </section>
-  
+
+  <section id="memories">
+    <h2>Relive Our Memories 💖</h2>
+
+    <!-- Memory Buttons -->
+    <div id="memoryButtons">
+      <button class="memoryBtn" data-image="images/VC_SS.jpeg" data-text="Th first Video Call">Memory 1</button>
+        <button class="memoryBtn" data-image="images/bus.jpg" data-text="Our first Bus Trip! Do you remember?">Memory 2</button>
+        <button class="memoryBtn" data-image="images/swamiMandirSelfie.jpeg" data-text="This day? What made it special?">Memory 3</button>
+    </div>
+
+    <!-- Memory Display Area -->
+    <div id="memoryDisplay" style="display:none; margin-top: 20px;">
+        <img id="memoryImage" src="" alt="Memory" width="300px">
+        <p id="memoryText"></p>
+    </div>
+</section>
+
+
+
   <div class="memory">
-    <h2></h2>
-    <img src="images/candidLaugh.jpeg" alt="Our first meeting">
-    <p>Remember the day you sent me this?</p>
   </div>
- <!--  
-  <section id="timeline">
-    <div class="memory">
-      <h2></h2>
-      <img src="images/candidLaugh.jpeg" alt="Our first meeting">
-      <p>Remember day you sent me this?</p>
-    </div>
-  </section>-->
 
-  <section id="splash">
-    <div class="splash-content">
-      <h1>Welcome, [Her Name]</h1>
-      <p>Let’s begin our unforgettable journey together...</p>
-      <button id="enterSite">Enter Our Story</button>
-    </div>
-  </section>
-
+  <!-- Proposal Section -->
+   
  
   
-
   <section id="proposal">
     <h2>A Special Question</h2>
     <button id="revealProposal">Click Me</button>
     <div id="proposalMessage" style="display:none;">
       <h3>Will you be mine forever?</h3>
+      <button id="yesBtn">Yes</button>
+      <button id="noBtn">No</button>
     </div>
   </section>
 
